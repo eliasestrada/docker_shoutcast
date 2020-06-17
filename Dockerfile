@@ -1,11 +1,4 @@
 FROM ubuntu:14.04
-MAINTAINER Aaron Cupp <IamMrCupp - mrcupp@mrcupp.com>
-LABEL vendor="Tech-Noid Systems" \
-      net.tech-noid.version="0.1.2" \
-      net.tech-noid.server="Shoutcast Master" \
-      net.tech-noid.release-date="2016-10-31" \
-      net.tech-noid.version.is-production="false"
-      
 
 RUN mkdir /opt/shoutcast && \
     mkdir /var/log/shoutcast
@@ -21,6 +14,6 @@ VOLUME ["/etc/shoutcast"]
 
 COPY shoutcast.conf /etc/shoutcast/
 
-EXPOSE 10128 10129
+EXPOSE 10001 10002
 
 ENTRYPOINT ["/opt/shoutcast/sc_serv", "/etc/shoutcast/shoutcast.conf"]
